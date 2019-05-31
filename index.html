@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>14-10-2019</title>
+    <script src="./node_modules/jquery/dist/jquery.min.js" charset="utf-8"></script>
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js" charset="utf-8"></script>
+    <script src="./node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>ToDo List</title>
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="page-header">
+        <h1>ToDo List</h1>
+      </div>
+      <div class="text-right form-group">
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddTask"><i class="glyphicon glyphicon-plus"></i> Add new task </button>
+      <button type="button" id="remove" class="btn btn-danger"><i class="glyphicon glyphicon-remove"></i> Remove all tasks </button>
+      </div>  
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="active"><a href="#ToDo" data-toggle="tab">To Do</a></li>
+			<li><a href="#in_progress" data-toggle="tab">In Progress</a></li>
+			<li><a href="#done" data-toggle="tab">Done</a></li>
+		</ul>
+
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane active" id="ToDo">
+        <ul class="list-group"  data-status="1">
+        </ul>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="in_progress">
+          <ul class="list-group" data-status="2">
+          </ul>
+			</div>
+			<div role="tabpanel" class="tab-pane" id="done">
+        <ul class="list-group" data-status="3">
+        </ul>
+			</div>
+    </div>
+    <div class="panels">
+      <div class="panel panel-danger">
+        <div class="panel-heading">Should be done</div>
+        <div class="panel-body"><span id="1">Tasks count : </span></div>
+      </div>
+      <div class="panel panel-warning">
+        <div class="panel-heading">Will be done soon</div>
+        <div class="panel-body"><span id="2">Tasks count : </span></div>
+      </div>
+      <div class="panel panel-success">
+        <div class="panel-heading">Already done</div>
+        <div class="panel-body"><span id="3">Tasks count : </span></div>
+      </div>
+    </div>
+    </div>
+</div>
+<div class="modal fade" id="modalAddTask" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Add task</h4>
+      </div>
+
+      <div class="modal-body">
+        <form id="formAddTask">
+          <div class="form-group">
+            <input type="text" name="title" placeholder="Task" autofocus="true" class="form-control">
+            <div class="form-group">
+              <select name="status" class="form-control status">
+                <option value="1">To Do</option>
+                <option value="2">In progress</option>
+                <option value="3">Done</option>
+              </select>
+            </div>
+            <input type="text" name="data" class="form-control data-picker">
+            <textarea name="text_area" class="text_area" rows="10" name="description"></textarea>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        <button class="btn btn-success" form="formAddTask">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalEditTask" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Edit task</h4>
+      </div>
+
+      <div class="modal-body">
+        <form id="formEditTask">
+          <input type="hidden" name="id">
+          <div class="form-group">
+            <input type="text" name="title" placeholder="Task" autofocus="true" class="form-control">
+          </div>
+          <div class="form-group">
+            <select name="status" class="form-control">
+              <option value="1">To Do</option>
+              <option value="2">In progress</option>
+              <option value="3">Done</option>
+            </select>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-danger" data-dismiss="modal">Cancel</button>
+        <button class="btn btn-success" form="formEditTask">Ok</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="./js/variable.js" charset="utf-8"></script>
+<script src="./js/functions.js" charset="utf-8"></script>
+<script src="./js/handler.js" charset="utf-8"></script>
+<script src="./js/script.js" charset="utf-8"></script>
+  </body>
+</html>

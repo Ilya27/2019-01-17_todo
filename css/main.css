@@ -1,0 +1,42 @@
+.nav-tabs{
+  border-bottom: 0px;
+}
+
+.tab-content{
+  padding-top: 15px;
+}
+
+.panels{
+  display: flex;
+  justify-content: space-between;
+}
+
+.panel{
+  width: 30%;
+}
+
+.btn-delete-task{
+  margin-left: 15px;
+}
+
+.data-picker{
+  margin-top: 15px;
+}
+
+.text_area{
+  margin-top: 15px;
+  width: 100%;
+}
+
+.status{
+  margin-top: 15px;
+}
+
+.text{
+  display: none;
+}
+
+.single_task{
+  display: inline-block;
+  width: 94%;
+}
